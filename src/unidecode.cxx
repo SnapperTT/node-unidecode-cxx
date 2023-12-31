@@ -13,7 +13,7 @@ void unidecode(string* input, string* output) {
         uint32_t code;
         try {
             code = utf8::next(str_i, end); // get 32 bit code of a utf-8 symbol
-        } catch (utf8::exception) {
+        } catch (utf8::exception & ex) {
             str_i++;
             continue;
         }
