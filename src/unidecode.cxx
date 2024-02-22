@@ -1,11 +1,11 @@
-#include <string>
+//#include <string>
 #include "../deps/utf8cpp/utf8.h"
 
 #include "data.cxx"
 
-using namespace std;
+//using namespace std;
 
-void unidecode(string* input, string* output) {
+void unidecode(nuc::string* input, nuc::string* output) {
     char* str_i = (char*) input->data();
     char* end = str_i + input->length();
 
