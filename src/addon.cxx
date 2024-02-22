@@ -1,5 +1,5 @@
 #include <nan.h>
-#include <string>
+//#include <string>
 #include "unidecode.cxx"
 
 using v8::FunctionTemplate;
@@ -13,8 +13,8 @@ using Nan::Set;
 
 NAN_METHOD(decode) {
   String::Utf8Value utf8_value(info[0].As<String>());
-  string input = string(*utf8_value, utf8_value.length());
-  string output;
+  string input = nuc::string(*utf8_value, utf8_value.length());
+  nuc::string output;
   unidecode(&input, &output);
 
   info.GetReturnValue().Set(New(output).ToLocalChecked());
